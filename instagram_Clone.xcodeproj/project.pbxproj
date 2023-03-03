@@ -10,12 +10,15 @@
 		FA34460029B290A6000D03F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3445FF29B290A6000D03F2 /* AppDelegate.swift */; };
 		FA34460229B290A6000D03F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34460129B290A6000D03F2 /* SceneDelegate.swift */; };
 		FA34460429B290A6000D03F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34460329B290A6000D03F2 /* ViewController.swift */; };
-		FA34460729B290A6000D03F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA34460529B290A6000D03F2 /* Main.storyboard */; };
 		FA34460929B290AD000D03F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA34460829B290AD000D03F2 /* Assets.xcassets */; };
 		FA34460C29B290AD000D03F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */; };
 		FA34461729B290AE000D03F2 /* instagram_CloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34461629B290AE000D03F2 /* instagram_CloneTests.swift */; };
 		FA34462129B290AE000D03F2 /* instagram_CloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34462029B290AE000D03F2 /* instagram_CloneUITests.swift */; };
 		FA34462329B290AE000D03F2 /* instagram_CloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34462229B290AE000D03F2 /* instagram_CloneUITestsLaunchTests.swift */; };
+		FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463529B29857000D03F2 /* RegisterViewController.swift */; };
+		FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463729B298AB000D03F2 /* RegisterPresenter.swift */; };
+		FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463929B2997C000D03F2 /* RegisterRouter.swift */; };
+		FA34463C29B2A51D000D03F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA34463B29B2A51D000D03F2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 		FA3445FF29B290A6000D03F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA34460129B290A6000D03F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA34460329B290A6000D03F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA34460629B290A6000D03F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA34460829B290AD000D03F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA34460B29B290AD000D03F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA34460D29B290AD000D03F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		FA34461C29B290AE000D03F2 /* instagram_CloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagram_CloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA34462029B290AE000D03F2 /* instagram_CloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_CloneUITests.swift; sourceTree = "<group>"; };
 		FA34462229B290AE000D03F2 /* instagram_CloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_CloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA34463529B29857000D03F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FA34463729B298AB000D03F2 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		FA34463929B2997C000D03F2 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		FA34463B29B2A51D000D03F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,14 @@
 		FA3445FE29B290A6000D03F2 /* instagram_Clone */ = {
 			isa = PBXGroup;
 			children = (
+				FA34462F29B297F5000D03F2 /* RegisterScreen */,
 				FA3445FF29B290A6000D03F2 /* AppDelegate.swift */,
 				FA34460129B290A6000D03F2 /* SceneDelegate.swift */,
 				FA34460329B290A6000D03F2 /* ViewController.swift */,
-				FA34460529B290A6000D03F2 /* Main.storyboard */,
 				FA34460829B290AD000D03F2 /* Assets.xcassets */,
 				FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */,
 				FA34460D29B290AD000D03F2 /* Info.plist */,
+				FA34463B29B2A51D000D03F2 /* GoogleService-Info.plist */,
 			);
 			path = instagram_Clone;
 			sourceTree = "<group>";
@@ -125,6 +132,48 @@
 				FA34462229B290AE000D03F2 /* instagram_CloneUITestsLaunchTests.swift */,
 			);
 			path = instagram_CloneUITests;
+			sourceTree = "<group>";
+		};
+		FA34462F29B297F5000D03F2 /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA34463429B29835000D03F2 /* UseCase */,
+				FA34463329B2982B000D03F2 /* Presenter */,
+				FA34463129B2981F000D03F2 /* View */,
+				FA34463029B29816000D03F2 /* Router */,
+			);
+			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		FA34463029B29816000D03F2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA34463929B2997C000D03F2 /* RegisterRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA34463129B2981F000D03F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA34463529B29857000D03F2 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA34463329B2982B000D03F2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA34463729B298AB000D03F2 /* RegisterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA34463429B29835000D03F2 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +282,7 @@
 			files = (
 				FA34460C29B290AD000D03F2 /* LaunchScreen.storyboard in Resources */,
 				FA34460929B290AD000D03F2 /* Assets.xcassets in Resources */,
-				FA34460729B290A6000D03F2 /* Main.storyboard in Resources */,
+				FA34463C29B2A51D000D03F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */,
 				FA34460429B290A6000D03F2 /* ViewController.swift in Sources */,
 				FA34460029B290A6000D03F2 /* AppDelegate.swift in Sources */,
 				FA34460229B290A6000D03F2 /* SceneDelegate.swift in Sources */,
+				FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */,
+				FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +349,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA34460529B290A6000D03F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA34460629B290A6000D03F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +485,6 @@
 				INFOPLIST_FILE = instagram_Clone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +511,6 @@
 				INFOPLIST_FILE = instagram_Clone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
