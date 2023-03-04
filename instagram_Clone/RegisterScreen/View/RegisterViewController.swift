@@ -8,7 +8,8 @@
 import UIKit
 
 protocol RegisterViewContract : UIViewController{
-    
+    func registerCompleted()
+    func registerFailed()
 }
 
 class RegisterViewController : UIViewController, RegisterViewContract {
@@ -19,6 +20,7 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "choosePhoto"), for: .normal)
+        button.addTarget(self, action: #selector(photoAddButtonClicked), for: .touchUpInside)
         return button
     }()
     
@@ -29,6 +31,7 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         textField.backgroundColor = UIColor(white: 0, alpha: 0.05)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 16)
+        textField.setLeftPaddingPoints(10)
         return textField
     }()
     
@@ -39,6 +42,7 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         textField.backgroundColor = UIColor(white: 0, alpha: 0.05)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 16)
+        textField.setLeftPaddingPoints(10)
         return textField
     }()
     
@@ -49,6 +53,8 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         textField.backgroundColor = UIColor(white: 0, alpha: 0.05)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 16)
+        textField.setLeftPaddingPoints(10)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -60,6 +66,7 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         button.layer.cornerRadius = 6
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitleColor(UIColor.white, for: .normal)
+        button.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -96,6 +103,55 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -45).isActive = true
         registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
                 
+    }
+    
+    @objc func registerButtonPressed(){
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            print("Bilgileri eksiksiz girmeniz gerekiyor")
+        } else {
+            presenter?.signInUser(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        }
+    }
+    
+    @objc func photoAddButtonClicked(){
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true)
+        
+    }
+    
+    func registerCompleted() {
+        let alertController = UIAlertController(title: "Kaydetme işlemi", message: "Kaydetme işlemi başarıyla tamamlandı", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            //self.presenter?.back()
+        }
+        alertController.addAction(alertAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+
+    }
+    
+    func registerFailed() {
+        let alert = UIAlertController(title: "Kaydetme işlemi", message: "Kaydetme işlemi başarısız. Tekrar Deneyiniz", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+extension RegisterViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let imageSelected = info[.originalImage] as? UIImage
+        self.addPhotoButton.setImage(imageSelected?.withRenderingMode(.alwaysOriginal), for: .normal)
+        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
+        addPhotoButton.layer.masksToBounds = true
+        addPhotoButton.layer.borderColor = UIColor.darkGray.cgColor
+        addPhotoButton.layer.borderWidth = 3
+        self.dismiss(animated: true)
     }
     
 }
