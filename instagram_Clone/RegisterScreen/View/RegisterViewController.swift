@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 protocol RegisterViewContract : UIViewController{
-    func registerCompleted()
+    func registerCompleted(userId : String)
     func registerFailed()
 }
 
 class RegisterViewController : UIViewController, RegisterViewContract {
     
     var presenter : RegisterPresentation?
+    
+    let hud = JGProgressHUD(style: .light)
     
     private lazy var addPhotoButton : UIButton = {
         let button = UIButton()
@@ -106,6 +109,10 @@ class RegisterViewController : UIViewController, RegisterViewContract {
     }
     
     @objc func registerButtonPressed(){
+        
+        hud.textLabel.text = "Kaydınız Gerçekleşiyor"
+        hud.show(in: self.view)
+        
         if emailTextField.text == "" || passwordTextField.text == "" {
             print("Bilgileri eksiksiz girmeniz gerekiyor")
         } else {
@@ -120,7 +127,14 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         
     }
     
-    func registerCompleted() {
+    func registerCompleted(userId : String) {
+        hud.dismiss(animated: true)
+        
+        let imageName = UUID().uuidString // this give us a random string
+        let imageData = self.addPhotoButton.imageView?.image?.jpegData(compressionQuality: 0.8) ?? Data()
+        
+        presenter?.savePhoto(imageName: imageName, imageData: imageData)
+        /*
         let alertController = UIAlertController(title: "Kaydetme işlemi", message: "Kaydetme işlemi başarıyla tamamlandı", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .default) { _ in
             //self.presenter?.back()
@@ -128,13 +142,17 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         alertController.addAction(alertAction)
         
         self.present(alertController, animated: true, completion: nil)
+         */
 
     }
     
     func registerFailed() {
+        hud.dismiss(animated: true)
+        /*
         let alert = UIAlertController(title: "Kaydetme işlemi", message: "Kaydetme işlemi başarısız. Tekrar Deneyiniz", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+         */
     }
     
 }

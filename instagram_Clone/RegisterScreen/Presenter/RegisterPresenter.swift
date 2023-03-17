@@ -9,6 +9,7 @@ import UIKit
 
 protocol RegisterPresentation{
     func signInUser(email: String, password : String)
+    func savePhoto(imageName : String, imageData : Data)
 }
 
 class RegisterPresenter : RegisterPresentation, RegisterPageUseCaseOutput {
@@ -26,12 +27,25 @@ class RegisterPresenter : RegisterPresentation, RegisterPageUseCaseOutput {
         registerUseCase.execute(email: email, password: password)
     }
     
-    func setRegisterSuccess() {
-        output.registerCompleted()
+    func savePhoto(imageName: String, imageData: Data) {
+        registerUseCase.savePhotoExecute(imageName: imageName, imageData: imageData)
+    }
+    
+    func setRegisterSuccess(userId : String) {
+        output.registerCompleted(userId: userId)
     }
     
     func setRegisterFailed(errorMessage: String) {
+        print("register olmadı : \(errorMessage)")
         output.registerFailed()
+    }
+    
+    func setSavePhotoSuccess() {
+        print("foto başarıyla kaydedildi")
+    }
+    
+    func setSavePhotoFailed(errorMessage: String) {
+        print("errorMessage : \(errorMessage)")
     }
     
     
