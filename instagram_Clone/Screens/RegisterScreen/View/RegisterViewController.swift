@@ -147,6 +147,11 @@ class RegisterViewController : UIViewController, RegisterViewContract {
     
     func saveDataCompled() {
         hud.dismiss(animated: true)
+        
+        addPhotoButton.setImage(UIImage(named: "choosePhoto"), for: .normal)
+        addPhotoButton.layer.borderWidth = 0
+        addPhotoButton.layer.borderColor = UIColor.clear.cgColor
+        
     }
     
     func registerFailed() {

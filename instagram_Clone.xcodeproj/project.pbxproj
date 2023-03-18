@@ -13,7 +13,6 @@
 		FA2976F929B367A50074706E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA2976F829B367A50074706E /* GoogleService-Info.plist */; };
 		FA34460029B290A6000D03F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3445FF29B290A6000D03F2 /* AppDelegate.swift */; };
 		FA34460229B290A6000D03F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34460129B290A6000D03F2 /* SceneDelegate.swift */; };
-		FA34460429B290A6000D03F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34460329B290A6000D03F2 /* ViewController.swift */; };
 		FA34460929B290AD000D03F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA34460829B290AD000D03F2 /* Assets.xcassets */; };
 		FA34460C29B290AD000D03F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */; };
 		FA34461729B290AE000D03F2 /* instagram_CloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34461629B290AE000D03F2 /* instagram_CloneTests.swift */; };
@@ -22,6 +21,11 @@
 		FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463529B29857000D03F2 /* RegisterViewController.swift */; };
 		FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463729B298AB000D03F2 /* RegisterPresenter.swift */; };
 		FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463929B2997C000D03F2 /* RegisterRouter.swift */; };
+		FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270629C651FE00093A84 /* MainTabBarViewController.swift */; };
+		FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270D29C6544600093A84 /* UserProfileViewController.swift */; };
+		FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270F29C661B500093A84 /* UserProfileRouter.swift */; };
+		FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271129C6622D00093A84 /* UserProfilePresenter.swift */; };
+		FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271329C6623B00093A84 /* UserProfileUseCase.swift */; };
 		FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */; };
 		FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +61,6 @@
 		FA3445FC29B290A6000D03F2 /* instagram_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3445FF29B290A6000D03F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA34460129B290A6000D03F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA34460329B290A6000D03F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA34460829B290AD000D03F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA34460B29B290AD000D03F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA34460D29B290AD000D03F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +72,11 @@
 		FA34463529B29857000D03F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA34463729B298AB000D03F2 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		FA34463929B2997C000D03F2 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		FA55270629C651FE00093A84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		FA55270D29C6544600093A84 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		FA55270F29C661B500093A84 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
+		FA55271129C6622D00093A84 /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
+		FA55271329C6623B00093A84 /* UserProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUseCase.swift; sourceTree = "<group>"; };
 		FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageUseCase.swift; sourceTree = "<group>"; };
 		FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,13 +157,11 @@
 		FA3445FE29B290A6000D03F2 /* instagram_Clone */ = {
 			isa = PBXGroup;
 			children = (
+				FA55270229C650D800093A84 /* Application */,
+				FA55270329C6518300093A84 /* Screens */,
 				FAEB770729B38CD60007C86E /* Extensions */,
-				FA34462F29B297F5000D03F2 /* RegisterScreen */,
-				FA3445FF29B290A6000D03F2 /* AppDelegate.swift */,
-				FA34460129B290A6000D03F2 /* SceneDelegate.swift */,
-				FA34460329B290A6000D03F2 /* ViewController.swift */,
-				FA34460829B290AD000D03F2 /* Assets.xcassets */,
 				FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */,
+				FA34460829B290AD000D03F2 /* Assets.xcassets */,
 				FA34460D29B290AD000D03F2 /* Info.plist */,
 				FA2976F829B367A50074706E /* GoogleService-Info.plist */,
 			);
@@ -218,6 +224,84 @@
 			isa = PBXGroup;
 			children = (
 				FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FA55270229C650D800093A84 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA34460129B290A6000D03F2 /* SceneDelegate.swift */,
+				FA3445FF29B290A6000D03F2 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FA55270329C6518300093A84 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FA55270429C651DB00093A84 /* MainTabBarScreen */,
+				FA55270829C6540400093A84 /* UserProfileScreen */,
+				FA34462F29B297F5000D03F2 /* RegisterScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FA55270429C651DB00093A84 /* MainTabBarScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA55270529C651F000093A84 /* View */,
+			);
+			path = MainTabBarScreen;
+			sourceTree = "<group>";
+		};
+		FA55270529C651F000093A84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA55270629C651FE00093A84 /* MainTabBarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA55270829C6540400093A84 /* UserProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA55270C29C6543000093A84 /* UseCase */,
+				FA55270B29C6542900093A84 /* Router */,
+				FA55270A29C6542300093A84 /* Presenter */,
+				FA55270929C6541D00093A84 /* View */,
+			);
+			path = UserProfileScreen;
+			sourceTree = "<group>";
+		};
+		FA55270929C6541D00093A84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA55270D29C6544600093A84 /* UserProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA55270A29C6542300093A84 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA55271129C6622D00093A84 /* UserProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA55270B29C6542900093A84 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA55270F29C661B500093A84 /* UserProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA55270C29C6543000093A84 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				FA55271329C6623B00093A84 /* UserProfileUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -469,14 +553,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */,
+				FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */,
 				FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */,
-				FA34460429B290A6000D03F2 /* ViewController.swift in Sources */,
+				FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */,
 				FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */,
 				FA34460029B290A6000D03F2 /* AppDelegate.swift in Sources */,
 				FA34460229B290A6000D03F2 /* SceneDelegate.swift in Sources */,
 				FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */,
 				FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */,
+				FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */,
 				FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */,
+				FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

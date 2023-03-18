@@ -20,8 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let registerPageView = RegisterRouter().viewController
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = registerPageView
+        window?.rootViewController = MainTabBarViewController()
         window?.makeKeyAndVisible()
+        //window?.rootViewController = UITabBarController()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
