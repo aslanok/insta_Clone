@@ -11,13 +11,19 @@ import Firebase
 protocol RegisterPageUseCaseInput {
     func execute(email : String, password : String)
     func savePhotoExecute(imageName : String, imageData : Data)
+    func getDownloadURLExecute(ref : StorageReference)
+    func saveUserData(userData : UserSavedData)
 }
 
 protocol RegisterPageUseCaseOutput {
     func setRegisterSuccess(userId : String )
     func setRegisterFailed(errorMessage : String)
-    func setSavePhotoSuccess()
+    func setSavePhotoSuccess(ref : StorageReference)
     func setSavePhotoFailed(errorMessage : String)
+    func getDownloadURLSuccess(url : String)
+    func getDownloadURLFailed(errorMessage : String)
+    func saveUserDataSuccess()
+    func saveUserDataFailed(errorMessage : String)
 }
 
 class RegisterPageUseCase : RegisterPageUseCaseInput {
@@ -42,7 +48,32 @@ class RegisterPageUseCase : RegisterPageUseCaseInput {
             if let error = error {
                 output?.setSavePhotoFailed(errorMessage: error.localizedDescription)
             } else {
-                output?.setSavePhotoSuccess()
+                output?.setSavePhotoSuccess(ref: ref)
+            }
+        }
+    }
+    
+    func getDownloadURLExecute(ref: StorageReference) {
+        ref.downloadURL { [self] url, error in
+            if let error = error {
+                output?.getDownloadURLFailed(errorMessage: error.localizedDescription)
+            } else {
+                output?.getDownloadURLSuccess(url: url?.absoluteString ?? "")
+            }
+        }
+    }
+    
+    func saveUserData(userData: UserSavedData ) {
+        
+        let addedData = ["NickName" : userData.nickName,
+                         "UserId" : userData.userId,
+                         "ImageUrl" : userData.urlString ]
+        
+        Firestore.firestore().collection("Users").document(userData.userId).setData(addedData) { [self] error in
+            if let error = error {
+                output?.saveUserDataFailed(errorMessage: error.localizedDescription)
+            } else {
+                output?.saveUserDataSuccess()
             }
             
         }

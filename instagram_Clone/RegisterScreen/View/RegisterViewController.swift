@@ -11,6 +11,7 @@ import JGProgressHUD
 protocol RegisterViewContract : UIViewController{
     func registerCompleted(userId : String)
     func registerFailed()
+    func saveDataCompled()
 }
 
 class RegisterViewController : UIViewController, RegisterViewContract {
@@ -116,7 +117,7 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         if emailTextField.text == "" || passwordTextField.text == "" {
             print("Bilgileri eksiksiz girmeniz gerekiyor")
         } else {
-            presenter?.signInUser(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+            presenter?.signInUser(email: emailTextField.text ?? "", password: passwordTextField.text ?? "", userName: nickNameTextField.text ?? "")
         }
     }
     
@@ -127,9 +128,7 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         
     }
     
-    func registerCompleted(userId : String) {
-        hud.dismiss(animated: true)
-        
+    func registerCompleted(userId : String) {        
         let imageName = UUID().uuidString // this give us a random string
         let imageData = self.addPhotoButton.imageView?.image?.jpegData(compressionQuality: 0.8) ?? Data()
         
@@ -144,6 +143,10 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         self.present(alertController, animated: true, completion: nil)
          */
 
+    }
+    
+    func saveDataCompled() {
+        hud.dismiss(animated: true)
     }
     
     func registerFailed() {
