@@ -29,7 +29,7 @@ class UserProfileUseCase : UserProfileUseCaseInput {
                 output?.setGetUserFailed(errorMessage: error.localizedDescription)
             } else {
                 guard let userData = snapshot?.data() else {return }
-                let data = UserSavedData(nickName: userData["NickName"] as! String , userId: userData["UserId"] as! String, urlString: "ImageUrl")
+                let data = UserSavedData(nickName: userData["NickName"] as! String , userId: userData["UserId"] as! String, urlString: userData["ImageUrl"] as! String)
                 output?.setGetUserSuccess(data : data)
             }
             

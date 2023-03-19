@@ -28,7 +28,7 @@ class UserProfilePresenter : UserProfilePresentation, UserProfileUseCaseOutput {
     }
     
     func setGetUserSuccess(data: UserSavedData) {
-        print("kullanici adi : \(data.nickName)")
+        output.displayUserInfo(userData: data)
     }
     
     func setGetUserFailed(errorMessage: String) {
