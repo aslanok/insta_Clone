@@ -26,6 +26,7 @@
 		FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270F29C661B500093A84 /* UserProfileRouter.swift */; };
 		FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271129C6622D00093A84 /* UserProfilePresenter.swift */; };
 		FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271329C6623B00093A84 /* UserProfileUseCase.swift */; };
+		FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60839329C90DC900E7743A /* MidLabelComponent.swift */; };
 		FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */; };
 		FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		FA55270F29C661B500093A84 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
 		FA55271129C6622D00093A84 /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
 		FA55271329C6623B00093A84 /* UserProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUseCase.swift; sourceTree = "<group>"; };
+		FA60839329C90DC900E7743A /* MidLabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidLabelComponent.swift; sourceTree = "<group>"; };
 		FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageUseCase.swift; sourceTree = "<group>"; };
 		FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +162,9 @@
 				FA55270229C650D800093A84 /* Application */,
 				FA55270329C6518300093A84 /* Screens */,
 				FAEB770729B38CD60007C86E /* Extensions */,
-				FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */,
+				FA60839229C90D8E00E7743A /* Components */,
 				FA34460829B290AD000D03F2 /* Assets.xcassets */,
+				FA34460A29B290AD000D03F2 /* LaunchScreen.storyboard */,
 				FA34460D29B290AD000D03F2 /* Info.plist */,
 				FA2976F829B367A50074706E /* GoogleService-Info.plist */,
 			);
@@ -304,6 +307,14 @@
 				FA55271329C6623B00093A84 /* UserProfileUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FA60839229C90D8E00E7743A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA60839329C90DC900E7743A /* MidLabelComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FAEB770729B38CD60007C86E /* Extensions */ = {
@@ -565,6 +576,7 @@
 				FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */,
 				FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */,
 				FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */,
+				FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
