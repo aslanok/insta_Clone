@@ -9,6 +9,7 @@ import UIKit
 
 protocol UserProfilePresentation {
     func getUser()
+    func logOut()
 }
 
 class UserProfilePresenter : UserProfilePresentation, UserProfileUseCaseOutput {
@@ -27,12 +28,24 @@ class UserProfilePresenter : UserProfilePresentation, UserProfileUseCaseOutput {
         userProfileUseCase.getUserExecute()
     }
     
+    func logOut() {
+        userProfileUseCase.logOutExecute()
+    }
+    
     func setGetUserSuccess(data: UserSavedData) {
         output.displayUserInfo(userData: data)
     }
     
     func setGetUserFailed(errorMessage: String) {
         print("failed : \(errorMessage)")
+    }
+    
+    func setLogOutSuccess() {
+        print("çıkış yapıldı")
+    }
+    
+    func setLogOutFailed(errorMessage: String) {
+        print("çıkış fail")
     }
     
 }

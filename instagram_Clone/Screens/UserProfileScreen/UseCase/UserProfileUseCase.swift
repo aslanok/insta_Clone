@@ -10,11 +10,14 @@ import Firebase
 
 protocol UserProfileUseCaseInput {
     func getUserExecute()
+    func logOutExecute()
 }
 
 protocol UserProfileUseCaseOutput {
     func setGetUserSuccess(data : UserSavedData)
     func setGetUserFailed(errorMessage : String)
+    func setLogOutSuccess()
+    func setLogOutFailed(errorMessage : String)
 }
 
 class UserProfileUseCase : UserProfileUseCaseInput {
@@ -33,6 +36,16 @@ class UserProfileUseCase : UserProfileUseCaseInput {
                 output?.setGetUserSuccess(data : data)
             }
             
+        }
+        
+    }
+    
+    func logOutExecute() {
+        do{
+            try Auth.auth().signOut()
+            self.output?.setLogOutSuccess()
+        } catch let error {
+            self.output?.setLogOutFailed(errorMessage: error.localizedDescription)
         }
         
     }

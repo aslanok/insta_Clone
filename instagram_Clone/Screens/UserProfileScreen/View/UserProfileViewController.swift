@@ -15,6 +15,7 @@ protocol UserProfileViewContract : UIViewController {
 class UserProfileViewController : UIViewController, UserProfileViewContract {
     
     internal var presenter : UserProfilePresentation?
+    private var _userId : String = ""
     
     private lazy var userProfileNameLabel : UILabel = {
         let label = UILabel()
@@ -165,9 +166,30 @@ class UserProfileViewController : UIViewController, UserProfileViewContract {
         return view
     }()
     
+    private lazy var collectionView : UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.contentMode = .scaleAspectFit
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(UserProfilePostCell.self, forCellWithReuseIdentifier: UserProfilePostCell.identifier)
+        return collectionView
+    }()
+    
+    private lazy var logOutButton : UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(logOutButtonClicked), for: .touchUpInside)
+        button.setImage(UIImage(named: "setting"), for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        collectionView.delegate = self
+        collectionView.dataSource = self
         setUpView()
         presenter?.getUser()
     }
@@ -238,15 +260,86 @@ class UserProfileViewController : UIViewController, UserProfileViewContract {
         line2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         line2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         
+        view.addSubview(collectionView)
+        collectionView.topAnchor.constraint(equalTo: line2.bottomAnchor, constant: 0).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        
+        view.addSubview(logOutButton)
+        logOutButton.centerYAnchor.constraint(equalTo: userProfileNameLabel.centerYAnchor, constant: 0).isActive = true
+        logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        logOutButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        logOutButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
         
     }
     
+    @objc func logOutButtonClicked(){
+        print("oturum kapat")
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionLogOut = UIAlertAction(title: "Log Out", style: .destructive, handler: { action in
+            self.logOutPressed()
+        })
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+            
+        })
+        alertController.addAction(actionLogOut)
+        alertController.addAction(actionCancel)
+        self.present(alertController,animated: true, completion: nil)
+    }
+    
+    func logOutPressed(){
+        presenter?.logOut()
+    }
+    
     func displayUserInfo(userData: UserSavedData) {
+        _userId = userData.userId
         userProfileNameLabel.text = userData.nickName
         nickNameLabel.text = userData.nickName
         let url = URL(string: userData.urlString)
         profilePhoto.sd_setImage(with: url)
     }
+}
+
+extension UserProfileViewController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserProfilePostCell.identifier, for: indexPath) as? UserProfilePostCell {
+            cell.setUp()
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+}
+
+extension UserProfileViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.bounds.size.width / 3) - 10 , height: 60)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+}
+
+extension UserProfileViewController : UICollectionViewDelegate {
     
 }
