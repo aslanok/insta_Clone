@@ -13,6 +13,7 @@ protocol RegisterPresentation{
     func savePhoto(imageName : String, imageData : Data)
     func getDownloadURL(ref : StorageReference)
     func saveUserData()
+    func presentLogInPage()
 }
 
 class RegisterPresenter : RegisterPresentation, RegisterPageUseCaseOutput {
@@ -46,6 +47,10 @@ class RegisterPresenter : RegisterPresentation, RegisterPageUseCaseOutput {
     func saveUserData() {
         let userData = UserSavedData(nickName: _nickName, userId: _userId, urlString: _urlString)
         registerUseCase.saveUserData(userData: userData)
+    }
+    
+    func presentLogInPage() {
+        router.presentLogInPage(from: output)
     }
     
     func setRegisterSuccess(userId : String) {

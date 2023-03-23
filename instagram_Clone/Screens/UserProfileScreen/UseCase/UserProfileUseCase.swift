@@ -31,9 +31,13 @@ class UserProfileUseCase : UserProfileUseCaseInput {
             if let error = error {
                 output?.setGetUserFailed(errorMessage: error.localizedDescription)
             } else {
-                guard let userData = snapshot?.data() else {return }
-                let data = UserSavedData(nickName: userData["NickName"] as! String , userId: userData["UserId"] as! String, urlString: userData["ImageUrl"] as! String)
-                output?.setGetUserSuccess(data : data)
+                if let userData = snapshot?.data() {
+                    let data = UserSavedData(nickName: userData["NickName"] as! String , userId: userData["UserId"] as! String, urlString: userData["ImageUrl"] as! String)
+                    output?.setGetUserSuccess(data : data)
+                } else {
+                    output?.setGetUserFailed(errorMessage: error?.localizedDescription ?? "error alt taraf")
+                }
+                
             }
             
         }

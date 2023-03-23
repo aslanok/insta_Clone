@@ -34,6 +34,7 @@
 		FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271129C6622D00093A84 /* UserProfilePresenter.swift */; };
 		FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271329C6623B00093A84 /* UserProfileUseCase.swift */; };
 		FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60839329C90DC900E7743A /* MidLabelComponent.swift */; };
+		FA76D5D829CD0A5A00D2706D /* LogInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76D5D729CD0A5A00D2706D /* LogInUseCase.swift */; };
 		FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */; };
 		FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		FA55271129C6622D00093A84 /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
 		FA55271329C6623B00093A84 /* UserProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUseCase.swift; sourceTree = "<group>"; };
 		FA60839329C90DC900E7743A /* MidLabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidLabelComponent.swift; sourceTree = "<group>"; };
+		FA76D5D729CD0A5A00D2706D /* LogInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUseCase.swift; sourceTree = "<group>"; };
 		FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageUseCase.swift; sourceTree = "<group>"; };
 		FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +250,7 @@
 		FA3BFFBE29CCACD7001C7D6C /* LogInScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FA76D5D629CD0A3B00D2706D /* UseCase */,
 				FA427C0829CCCF4400F96810 /* Presenter */,
 				FA3BFFC029CCACEF001C7D6C /* View */,
 				FA3BFFBF29CCACE9001C7D6C /* Router */,
@@ -392,6 +395,14 @@
 				FA60839329C90DC900E7743A /* MidLabelComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FA76D5D629CD0A3B00D2706D /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				FA76D5D729CD0A5A00D2706D /* LogInUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		FAEB770729B38CD60007C86E /* Extensions */ = {
@@ -653,6 +664,7 @@
 				FA2CEFFA29CA59B400DBD20F /* UserProfilePostCell.swift in Sources */,
 				FA34460229B290A6000D03F2 /* SceneDelegate.swift in Sources */,
 				FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */,
+				FA76D5D829CD0A5A00D2706D /* LogInUseCase.swift in Sources */,
 				FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */,
 				FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */,
 				FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */,

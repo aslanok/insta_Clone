@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 protocol LogInViewContract : UIViewController {
-    
+    func displayLogInSuccess()
 }
 
 class LogInViewController : UIViewController, LogInViewContract{
     
     var presenter : LogInPresentation?
+    
+    var hud = JGProgressHUD(style: .light)
     
     private lazy var notRegisterButton : UIButton = {
         let button = UIButton()
@@ -73,12 +76,12 @@ class LogInViewController : UIViewController, LogInViewContract{
     private lazy var logInButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Register", for: .normal)
+        button.setTitle("Log In", for: .normal)
         button.backgroundColor = UIColor(red: 150/255, green: 205/255, blue: 245/255, alpha: 1.0)
         button.layer.cornerRadius = 6
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(logInButtonClicked), for: .touchUpInside)
         return button
     }()
     
@@ -126,12 +129,25 @@ class LogInViewController : UIViewController, LogInViewContract{
         
     }
     
-    
     @objc func registerButtonPressed(){
-        print("register clicked")
         presenter?.presentRegister()
     }
     
+    @objc func logInButtonClicked(){
+        hud.textLabel.text = "Oturum Açılıyor"
+        hud.show(in: self.view)
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            print("Bilgileri eksiksiz girmeniz gerekiyor")
+        } else {
+            presenter?.logIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        }
+    }
     
+    func displayLogInSuccess() {
+        hud.dismiss(animated: true)
+        hud.textLabel.text = "Log In Successfull"
+        hud.dismiss(afterDelay: 2, animated: true)
+        presenter?.dismiss()
+    }
     
 }

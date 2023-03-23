@@ -191,6 +191,10 @@ class UserProfileViewController : UIViewController, UserProfileViewContract {
         collectionView.delegate = self
         collectionView.dataSource = self
         setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter?.getUser()
     }
     
@@ -293,6 +297,7 @@ class UserProfileViewController : UIViewController, UserProfileViewContract {
     
     func displayUserInfo(userData: UserSavedData) {
         _userId = userData.userId
+        print("userData geldi")
         userProfileNameLabel.text = userData.nickName
         nickNameLabel.text = userData.nickName
         let url = URL(string: userData.urlString)

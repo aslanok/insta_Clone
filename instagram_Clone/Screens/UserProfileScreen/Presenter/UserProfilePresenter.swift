@@ -41,6 +41,7 @@ class UserProfilePresenter : UserProfilePresentation, UserProfileUseCaseOutput {
     }
     
     func setLogOutSuccess() {
+        router.presentLogIn(from: output)
         print("çıkış yapıldı")
     }
     

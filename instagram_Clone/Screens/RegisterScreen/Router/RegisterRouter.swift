@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RegisterRouting{
-    
+    func presentLogInPage(from view : UIViewController)
 }
 
 class RegisterRouter : RegisterRouting {
@@ -18,11 +18,16 @@ class RegisterRouter : RegisterRouting {
         let registerCase = RegisterPageUseCase()
         let presenter = RegisterPresenter(router: self, view: view, registerCase: registerCase )
         
+        view.modalPresentationStyle = .fullScreen
+        
         registerCase.output = presenter
         view.presenter = presenter
-        
         presenter.output = view
         return view
+    }
+    
+    func presentLogInPage(from view: UIViewController) {
+        view.dismiss(animated: true)
     }
     
 }

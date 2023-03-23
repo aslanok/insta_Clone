@@ -74,6 +74,25 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         return button
     }()
     
+    private lazy var goLogInButton : UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        let attrString = NSMutableAttributedString(string: "If you had an account, ", attributes: [
+            .font : UIFont.systemFont(ofSize: 16),
+            .foregroundColor : UIColor.lightGray
+        ])
+        attrString.append(NSAttributedString(string: "go LogIn Page", attributes: [
+            .font : UIFont.boldSystemFont(ofSize: 16),
+            .foregroundColor : UIColor.systemBlue
+        ]))
+        button.setAttributedTitle(attrString, for: .normal)
+        button.backgroundColor = .clear
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(goLogInPressed), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -106,14 +125,17 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 45).isActive = true
         registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -45).isActive = true
         registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                
+        
+        view.addSubview(goLogInButton)
+        goLogInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        goLogInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        goLogInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        goLogInButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     @objc func registerButtonPressed(){
-        
         hud.textLabel.text = "Kaydınız Gerçekleşiyor"
         hud.show(in: self.view)
-        
         if emailTextField.text == "" || passwordTextField.text == "" {
             print("Bilgileri eksiksiz girmeniz gerekiyor")
         } else {
@@ -125,7 +147,10 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         self.present(imagePickerController, animated: true)
-        
+    }
+    
+    @objc func goLogInPressed(){
+        presenter?.presentLogInPage()
     }
     
     func registerCompleted(userId : String) {        
@@ -133,34 +158,22 @@ class RegisterViewController : UIViewController, RegisterViewContract {
         let imageData = self.addPhotoButton.imageView?.image?.jpegData(compressionQuality: 0.8) ?? Data()
         
         presenter?.savePhoto(imageName: imageName, imageData: imageData)
-        /*
-        let alertController = UIAlertController(title: "Kaydetme işlemi", message: "Kaydetme işlemi başarıyla tamamlandı", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { _ in
-            //self.presenter?.back()
-        }
-        alertController.addAction(alertAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-         */
-
     }
     
     func saveDataCompled() {
         hud.dismiss(animated: true)
-        
+        hud.textLabel.text = "Kayıt Başarılı"
+        hud.dismiss(afterDelay: 2, animated: true)
         addPhotoButton.setImage(UIImage(named: "choosePhoto"), for: .normal)
         addPhotoButton.layer.borderWidth = 0
         addPhotoButton.layer.borderColor = UIColor.clear.cgColor
-        
+        emailTextField.text = ""
+        nickNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     func registerFailed() {
         hud.dismiss(animated: true)
-        /*
-        let alert = UIAlertController(title: "Kaydetme işlemi", message: "Kaydetme işlemi başarısız. Tekrar Deneyiniz", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-         */
     }
     
 }

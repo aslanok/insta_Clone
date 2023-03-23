@@ -20,9 +20,7 @@ class UserProfileRouter : UserProfileRouting {
         
         userProfileUseCase.output = presenter
         view.presenter = presenter
-        
         presenter.output = view
-        
         return view
     }
     
