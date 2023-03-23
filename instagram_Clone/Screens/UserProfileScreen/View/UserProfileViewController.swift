@@ -271,8 +271,6 @@ class UserProfileViewController : UIViewController, UserProfileViewContract {
         logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         logOutButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         logOutButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        
     }
     
     @objc func logOutButtonClicked(){

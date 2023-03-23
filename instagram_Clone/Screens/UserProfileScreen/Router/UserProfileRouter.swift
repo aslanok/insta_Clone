@@ -8,7 +8,7 @@
 import UIKit
 
 protocol UserProfileRouting {
-    
+    func presentLogIn(from view : UIViewController)
 }
 
 class UserProfileRouter : UserProfileRouting {
@@ -26,4 +26,9 @@ class UserProfileRouter : UserProfileRouting {
         return view
     }
     
+    func presentLogIn(from view : UIViewController) {
+        DispatchQueue.main.async {
+            view.present(LogInRouter().viewController, animated: true)
+        }
+    }
 }

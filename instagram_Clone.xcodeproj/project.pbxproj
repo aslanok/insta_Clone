@@ -22,6 +22,12 @@
 		FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463529B29857000D03F2 /* RegisterViewController.swift */; };
 		FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463729B298AB000D03F2 /* RegisterPresenter.swift */; };
 		FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34463929B2997C000D03F2 /* RegisterRouter.swift */; };
+		FA3BFFC229CCAD01001C7D6C /* LogInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFC129CCAD01001C7D6C /* LogInRouter.swift */; };
+		FA3BFFC429CCAD35001C7D6C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFC329CCAD35001C7D6C /* LogInViewController.swift */; };
+		FA3BFFC929CCADC3001C7D6C /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFC829CCADC3001C7D6C /* MainTabBarRouter.swift */; };
+		FA3BFFCC29CCADE0001C7D6C /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */; };
+		FA3BFFCE29CCADED001C7D6C /* MainTabBarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */; };
+		FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA427C0929CCCF5700F96810 /* LogInPresenter.swift */; };
 		FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270629C651FE00093A84 /* MainTabBarViewController.swift */; };
 		FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270D29C6544600093A84 /* UserProfileViewController.swift */; };
 		FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270F29C661B500093A84 /* UserProfileRouter.swift */; };
@@ -75,6 +81,12 @@
 		FA34463529B29857000D03F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA34463729B298AB000D03F2 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		FA34463929B2997C000D03F2 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		FA3BFFC129CCAD01001C7D6C /* LogInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInRouter.swift; sourceTree = "<group>"; };
+		FA3BFFC329CCAD35001C7D6C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FA3BFFC829CCADC3001C7D6C /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
+		FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
+		FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarUseCase.swift; sourceTree = "<group>"; };
+		FA427C0929CCCF5700F96810 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		FA55270629C651FE00093A84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		FA55270D29C6544600093A84 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		FA55270F29C661B500093A84 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
@@ -233,6 +245,64 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		FA3BFFBE29CCACD7001C7D6C /* LogInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA427C0829CCCF4400F96810 /* Presenter */,
+				FA3BFFC029CCACEF001C7D6C /* View */,
+				FA3BFFBF29CCACE9001C7D6C /* Router */,
+			);
+			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		FA3BFFBF29CCACE9001C7D6C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BFFC129CCAD01001C7D6C /* LogInRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA3BFFC029CCACEF001C7D6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BFFC329CCAD35001C7D6C /* LogInViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA3BFFC529CCADA3001C7D6C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BFFC829CCADC3001C7D6C /* MainTabBarRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA3BFFC629CCADA7001C7D6C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA3BFFC729CCADAC001C7D6C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FA427C0829CCCF4400F96810 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA427C0929CCCF5700F96810 /* LogInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		FA55270229C650D800093A84 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +315,7 @@
 		FA55270329C6518300093A84 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BFFBE29CCACD7001C7D6C /* LogInScreen */,
 				FA55270429C651DB00093A84 /* MainTabBarScreen */,
 				FA55270829C6540400093A84 /* UserProfileScreen */,
 				FA34462F29B297F5000D03F2 /* RegisterScreen */,
@@ -255,6 +326,9 @@
 		FA55270429C651DB00093A84 /* MainTabBarScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BFFC729CCADAC001C7D6C /* UseCase */,
+				FA3BFFC629CCADA7001C7D6C /* Presenter */,
+				FA3BFFC529CCADA3001C7D6C /* Router */,
 				FA55270529C651F000093A84 /* View */,
 			);
 			path = MainTabBarScreen;
@@ -568,19 +642,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */,
+				FA3BFFCE29CCADED001C7D6C /* MainTabBarUseCase.swift in Sources */,
 				FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */,
 				FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */,
+				FA3BFFC229CCAD01001C7D6C /* LogInRouter.swift in Sources */,
 				FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */,
 				FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */,
+				FA3BFFC929CCADC3001C7D6C /* MainTabBarRouter.swift in Sources */,
 				FA34460029B290A6000D03F2 /* AppDelegate.swift in Sources */,
 				FA2CEFFA29CA59B400DBD20F /* UserProfilePostCell.swift in Sources */,
 				FA34460229B290A6000D03F2 /* SceneDelegate.swift in Sources */,
 				FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */,
+				FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */,
 				FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */,
 				FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */,
+				FA3BFFC429CCAD35001C7D6C /* LogInViewController.swift in Sources */,
 				FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */,
 				FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */,
 				FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */,
+				FA3BFFCC29CCADE0001C7D6C /* MainTabBarPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
