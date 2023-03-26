@@ -35,6 +35,14 @@
 		FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55271329C6623B00093A84 /* UserProfileUseCase.swift */; };
 		FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60839329C90DC900E7743A /* MidLabelComponent.swift */; };
 		FA76D5D829CD0A5A00D2706D /* LogInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76D5D729CD0A5A00D2706D /* LogInUseCase.swift */; };
+		FAAA3C9329D07E0300565A3D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3C9229D07E0300565A3D /* HomeRouter.swift */; };
+		FAAA3C9529D07E4F00565A3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3C9429D07E4F00565A3D /* HomeViewController.swift */; };
+		FAAA3C9A29D07FF800565A3D /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3C9929D07FF800565A3D /* SearchScreenViewController.swift */; };
+		FAAA3C9C29D0808D00565A3D /* SearchScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3C9B29D0808D00565A3D /* SearchScreenRouter.swift */; };
+		FAAA3CA529D0824A00565A3D /* PhotoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CA429D0824A00565A3D /* PhotoAddViewController.swift */; };
+		FAAA3CA729D0825900565A3D /* PhotoAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CA629D0825900565A3D /* PhotoAddRouter.swift */; };
+		FAAA3CA929D0826800565A3D /* LikesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CA829D0826800565A3D /* LikesScreenViewController.swift */; };
+		FAAA3CAB29D0827500565A3D /* LikesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CAA29D0827500565A3D /* LikesScreenRouter.swift */; };
 		FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */; };
 		FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +103,14 @@
 		FA55271329C6623B00093A84 /* UserProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUseCase.swift; sourceTree = "<group>"; };
 		FA60839329C90DC900E7743A /* MidLabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidLabelComponent.swift; sourceTree = "<group>"; };
 		FA76D5D729CD0A5A00D2706D /* LogInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUseCase.swift; sourceTree = "<group>"; };
+		FAAA3C9229D07E0300565A3D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		FAAA3C9429D07E4F00565A3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FAAA3C9929D07FF800565A3D /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
+		FAAA3C9B29D0808D00565A3D /* SearchScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchScreenRouter.swift; path = ../../../../../../../Desktop/SearchScreenRouter.swift; sourceTree = "<group>"; };
+		FAAA3CA429D0824A00565A3D /* PhotoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddViewController.swift; sourceTree = "<group>"; };
+		FAAA3CA629D0825900565A3D /* PhotoAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddRouter.swift; sourceTree = "<group>"; };
+		FAAA3CA829D0826800565A3D /* LikesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreenViewController.swift; sourceTree = "<group>"; };
+		FAAA3CAA29D0827500565A3D /* LikesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreenRouter.swift; sourceTree = "<group>"; };
 		FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageUseCase.swift; sourceTree = "<group>"; };
 		FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -318,6 +334,10 @@
 		FA55270329C6518300093A84 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FAAA3CA129D0820E00565A3D /* DiscoverScreen */,
+				FAAA3C9D29D081D200565A3D /* LikesScreen */,
+				FAAA3C9629D07FDA00565A3D /* SearchScreen */,
+				FAAA3C8F29D07DD700565A3D /* HomeScreen */,
 				FA3BFFBE29CCACD7001C7D6C /* LogInScreen */,
 				FA55270429C651DB00093A84 /* MainTabBarScreen */,
 				FA55270829C6540400093A84 /* UserProfileScreen */,
@@ -403,6 +423,106 @@
 				FA76D5D729CD0A5A00D2706D /* LogInUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FAAA3C8F29D07DD700565A3D /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9129D07DE800565A3D /* View */,
+				FAAA3C9029D07DE200565A3D /* Router */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		FAAA3C9029D07DE200565A3D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9229D07E0300565A3D /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAAA3C9129D07DE800565A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9429D07E4F00565A3D /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAAA3C9629D07FDA00565A3D /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9829D07FE900565A3D /* View */,
+				FAAA3C9729D07FE300565A3D /* Router */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
+		FAAA3C9729D07FE300565A3D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9B29D0808D00565A3D /* SearchScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAAA3C9829D07FE900565A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9929D07FF800565A3D /* SearchScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAAA3C9D29D081D200565A3D /* LikesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3C9F29D081FE00565A3D /* View */,
+				FAAA3C9E29D081F900565A3D /* Router */,
+			);
+			path = LikesScreen;
+			sourceTree = "<group>";
+		};
+		FAAA3C9E29D081F900565A3D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3CAA29D0827500565A3D /* LikesScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAAA3C9F29D081FE00565A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3CA829D0826800565A3D /* LikesScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAAA3CA129D0820E00565A3D /* DiscoverScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3CA329D0823900565A3D /* View */,
+				FAAA3CA229D0823400565A3D /* Router */,
+			);
+			path = DiscoverScreen;
+			sourceTree = "<group>";
+		};
+		FAAA3CA229D0823400565A3D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3CA629D0825900565A3D /* PhotoAddRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAAA3CA329D0823900565A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA3CA429D0824A00565A3D /* PhotoAddViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FAEB770729B38CD60007C86E /* Extensions */ = {
@@ -653,10 +773,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */,
+				FAAA3C9C29D0808D00565A3D /* SearchScreenRouter.swift in Sources */,
+				FAAA3C9329D07E0300565A3D /* HomeRouter.swift in Sources */,
 				FA3BFFCE29CCADED001C7D6C /* MainTabBarUseCase.swift in Sources */,
 				FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */,
+				FAAA3CA529D0824A00565A3D /* PhotoAddViewController.swift in Sources */,
 				FA34463829B298AB000D03F2 /* RegisterPresenter.swift in Sources */,
 				FA3BFFC229CCAD01001C7D6C /* LogInRouter.swift in Sources */,
+				FAAA3C9529D07E4F00565A3D /* HomeViewController.swift in Sources */,
 				FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */,
 				FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */,
 				FA3BFFC929CCADC3001C7D6C /* MainTabBarRouter.swift in Sources */,
@@ -666,11 +790,15 @@
 				FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */,
 				FA76D5D829CD0A5A00D2706D /* LogInUseCase.swift in Sources */,
 				FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */,
+				FAAA3CA729D0825900565A3D /* PhotoAddRouter.swift in Sources */,
+				FAAA3CAB29D0827500565A3D /* LikesScreenRouter.swift in Sources */,
+				FAAA3C9A29D07FF800565A3D /* SearchScreenViewController.swift in Sources */,
 				FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */,
 				FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */,
 				FA3BFFC429CCAD35001C7D6C /* LogInViewController.swift in Sources */,
 				FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */,
 				FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */,
+				FAAA3CA929D0826800565A3D /* LikesScreenViewController.swift in Sources */,
 				FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */,
 				FA3BFFCC29CCADE0001C7D6C /* MainTabBarPresenter.swift in Sources */,
 			);
