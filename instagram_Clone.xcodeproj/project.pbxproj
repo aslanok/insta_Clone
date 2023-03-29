@@ -334,7 +334,7 @@
 		FA55270329C6518300093A84 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FAAA3CA129D0820E00565A3D /* DiscoverScreen */,
+				FAAA3CA129D0820E00565A3D /* PhotoAddScreen */,
 				FAAA3C9D29D081D200565A3D /* LikesScreen */,
 				FAAA3C9629D07FDA00565A3D /* SearchScreen */,
 				FAAA3C8F29D07DD700565A3D /* HomeScreen */,
@@ -500,13 +500,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		FAAA3CA129D0820E00565A3D /* DiscoverScreen */ = {
+		FAAA3CA129D0820E00565A3D /* PhotoAddScreen */ = {
 			isa = PBXGroup;
 			children = (
 				FAAA3CA329D0823900565A3D /* View */,
 				FAAA3CA229D0823400565A3D /* Router */,
 			);
-			path = DiscoverScreen;
+			path = PhotoAddScreen;
 			sourceTree = "<group>";
 		};
 		FAAA3CA229D0823400565A3D /* Router */ = {
