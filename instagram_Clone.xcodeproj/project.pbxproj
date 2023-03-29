@@ -43,6 +43,8 @@
 		FAAA3CA729D0825900565A3D /* PhotoAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CA629D0825900565A3D /* PhotoAddRouter.swift */; };
 		FAAA3CA929D0826800565A3D /* LikesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CA829D0826800565A3D /* LikesScreenViewController.swift */; };
 		FAAA3CAB29D0827500565A3D /* LikesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3CAA29D0827500565A3D /* LikesScreenRouter.swift */; };
+		FAAF80E229D4F22200D0553C /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF80E129D4F22200D0553C /* PhotoSelectorCell.swift */; };
+		FAAF80E429D4F68F00D0553C /* PhotoSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF80E329D4F68F00D0553C /* PhotoSelectorHeader.swift */; };
 		FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */; };
 		FAEB770929B38CEF0007C86E /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -111,6 +113,8 @@
 		FAAA3CA629D0825900565A3D /* PhotoAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddRouter.swift; sourceTree = "<group>"; };
 		FAAA3CA829D0826800565A3D /* LikesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreenViewController.swift; sourceTree = "<group>"; };
 		FAAA3CAA29D0827500565A3D /* LikesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreenRouter.swift; sourceTree = "<group>"; };
+		FAAF80E129D4F22200D0553C /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
+		FAAF80E329D4F68F00D0553C /* PhotoSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorHeader.swift; sourceTree = "<group>"; };
 		FAEB770329B38AA30007C86E /* RegisterPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageUseCase.swift; sourceTree = "<group>"; };
 		FAEB770829B38CEF0007C86E /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -521,6 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				FAAA3CA429D0824A00565A3D /* PhotoAddViewController.swift */,
+				FAAF80E129D4F22200D0553C /* PhotoSelectorCell.swift */,
+				FAAF80E329D4F68F00D0553C /* PhotoSelectorHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -791,8 +797,10 @@
 				FA76D5D829CD0A5A00D2706D /* LogInUseCase.swift in Sources */,
 				FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */,
 				FAAA3CA729D0825900565A3D /* PhotoAddRouter.swift in Sources */,
+				FAAF80E229D4F22200D0553C /* PhotoSelectorCell.swift in Sources */,
 				FAAA3CAB29D0827500565A3D /* LikesScreenRouter.swift in Sources */,
 				FAAA3C9A29D07FF800565A3D /* SearchScreenViewController.swift in Sources */,
+				FAAF80E429D4F68F00D0553C /* PhotoSelectorHeader.swift in Sources */,
 				FA34463629B29857000D03F2 /* RegisterViewController.swift in Sources */,
 				FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */,
 				FA3BFFC429CCAD35001C7D6C /* LogInViewController.swift in Sources */,

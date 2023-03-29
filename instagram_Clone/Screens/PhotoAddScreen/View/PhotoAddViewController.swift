@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import Photos
 
 protocol PhotoAddViewContract{
     
 }
 
 class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    private var photosArray : [UIImage] = [UIImage]()
+    private var selectedPhoto : UIImage?
     
     private lazy var backButton : UIButton = {
         let button = UIButton()
@@ -25,8 +29,8 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
     private lazy var collectionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "addPhotoCell")
-        collectionView.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        collectionView.register(PhotoSelectorCell.self, forCellWithReuseIdentifier: "addPhotoCell")
+        collectionView.register(PhotoSelectorHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         return collectionView
     }()
     
@@ -38,7 +42,7 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
         collectionView.dataSource = self
         
         setUpView()
-        
+        getPhotos()
     }
     
     func setUpView(){
@@ -56,12 +60,44 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
         
     }
     
+    func getPhotos(){
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.fetchLimit = 10
+        
+        let orderOption = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchOptions.sortDescriptors = [orderOption]
+        
+        let photos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        
+        photos.enumerateObjects { asset, number, stop in
+            // in asset photo infos contains
+            // number is the num of photo around 0-9
+            let imageManager = PHImageManager.default()
+            let sizeOfPhoto = CGSize(width: 400, height: 400)
+            let options = PHImageRequestOptions()
+            options.isSynchronous = true
+            imageManager.requestImage(for: asset, targetSize: sizeOfPhoto, contentMode: .aspectFit, options: options) { photo, photoInfos in
+                if let photo = photo {
+                    self.photosArray.append(photo)
+                    
+                    if self.selectedPhoto == nil {
+                        self.selectedPhoto = photo
+                    }
+                    
+                }
+                if number == self.photosArray.count - 1{
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
     @objc func backButtonTapped(){
         print("back Tapped")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return photosArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -69,15 +105,21 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath)
-        header.backgroundColor = .blue
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! PhotoSelectorHeader
+        header.imageHeader.image = selectedPhoto
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoCell", for: indexPath)
-        cell.backgroundColor = .brown
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoCell", for: indexPath) as! PhotoSelectorCell
+        cell.imagePhoto.image = photosArray[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPhoto = photosArray[indexPath.row]
+        collectionView.reloadData()
+        print(selectedPhoto)
     }
     
 }
