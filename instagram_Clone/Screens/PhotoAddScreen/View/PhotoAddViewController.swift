@@ -14,6 +14,7 @@ protocol PhotoAddViewContract{
 
 class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    private var assetsArray : [PHAsset] = [PHAsset]()
     private var photosArray : [UIImage] = [UIImage]()
     private var selectedPhoto : UIImage?
     
@@ -73,11 +74,12 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
             // in asset photo infos contains
             // number is the num of photo around 0-9
             let imageManager = PHImageManager.default()
-            let sizeOfPhoto = CGSize(width: 400, height: 400)
+            let sizeOfPhoto = CGSize(width: 200, height: 200)
             let options = PHImageRequestOptions()
             options.isSynchronous = true
             imageManager.requestImage(for: asset, targetSize: sizeOfPhoto, contentMode: .aspectFit, options: options) { photo, photoInfos in
                 if let photo = photo {
+                    self.assetsArray.append(asset)
                     self.photosArray.append(photo)
                     
                     if self.selectedPhoto == nil {
@@ -107,6 +109,18 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! PhotoSelectorHeader
         header.imageHeader.image = selectedPhoto
+        if let selectedPhoto = selectedPhoto {
+            if let index = self.photosArray.firstIndex(of: selectedPhoto){
+                let selectedAsset = self.assetsArray[index]
+                let photoManager = PHImageManager.default()
+                let size = CGSize(width: 600, height: 600)
+                photoManager.requestImage(for: selectedAsset, targetSize: size, contentMode: .default, options: nil) { photo, info in
+                    header.imageHeader.image = photo
+                }
+                
+            }
+        }
+        
         return header
     }
     

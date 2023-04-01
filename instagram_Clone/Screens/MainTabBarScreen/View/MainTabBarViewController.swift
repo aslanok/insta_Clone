@@ -33,15 +33,15 @@ class MainTabBarViewController : UITabBarController, MainTabBarViewContract {
         searchScreenViewController.tabBarItem.image = UIImage(named: "searchSelected")
         searchScreenViewController.tabBarItem.selectedImage = UIImage(named: "searchNotSelected")
         
-        let discoverScreenViewController = PhotoAddRouter().viewController
-        discoverScreenViewController.tabBarItem.image = UIImage(named: "addIcon")
-        discoverScreenViewController.tabBarItem.selectedImage = UIImage(named: "addIcon")
+        let photoAddViewController = PhotoAddRouter().viewController
+        photoAddViewController.tabBarItem.image = UIImage(named: "addIcon")
+        photoAddViewController.tabBarItem.selectedImage = UIImage(named: "addIcon")
         
         let likesScreenViewController = LikesScreenRouter().viewController
         likesScreenViewController.tabBarItem.image = UIImage(named: "liked")
         likesScreenViewController.tabBarItem.selectedImage = UIImage(named: "notLiked")
         
-        viewControllers = [homeViewController,searchScreenViewController,discoverScreenViewController,likesScreenViewController,userProfileViewController]
+        viewControllers = [homeViewController,searchScreenViewController,photoAddViewController,likesScreenViewController,userProfileViewController]
     }
     
     override func viewWillAppear(_ animated: Bool) {
