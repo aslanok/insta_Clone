@@ -27,6 +27,16 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
         return button
     }()
     
+    private lazy var nextButton : UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Sonraki", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    
     private lazy var collectionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +62,10 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
         backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        view.addSubview(nextButton)
+        nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        nextButton.centerYAnchor.constraint(equalTo: backButton.centerYAnchor).isActive = true
         
         view.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 10).isActive = true
@@ -98,6 +112,10 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
         print("back Tapped")
     }
     
+    @objc func nextButtonTapped(){
+        print("next tapped")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photosArray.count
     }
@@ -133,7 +151,7 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPhoto = photosArray[indexPath.row]
         collectionView.reloadData()
-        print(selectedPhoto)
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
     }
     
 }
