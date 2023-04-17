@@ -28,6 +28,10 @@
 		FA3BFFCC29CCADE0001C7D6C /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */; };
 		FA3BFFCE29CCADED001C7D6C /* MainTabBarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */; };
 		FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA427C0929CCCF5700F96810 /* LogInPresenter.swift */; };
+		FA4FC6FD29ECBE6A0045BAD3 /* PhotoAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC6FC29ECBE6A0045BAD3 /* PhotoAddPresenter.swift */; };
+		FA4FC70429ECBF7F0045BAD3 /* PhotoShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC70329ECBF7E0045BAD3 /* PhotoShareViewController.swift */; };
+		FA4FC70629ECBFC90045BAD3 /* PhotoSharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC70529ECBFC90045BAD3 /* PhotoSharePresenter.swift */; };
+		FA4FC70829ECC04B0045BAD3 /* PhotoShareRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC70729ECC04B0045BAD3 /* PhotoShareRouter.swift */; };
 		FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270629C651FE00093A84 /* MainTabBarViewController.swift */; };
 		FA55270E29C6544600093A84 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270D29C6544600093A84 /* UserProfileViewController.swift */; };
 		FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55270F29C661B500093A84 /* UserProfileRouter.swift */; };
@@ -98,6 +102,10 @@
 		FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
 		FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarUseCase.swift; sourceTree = "<group>"; };
 		FA427C0929CCCF5700F96810 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
+		FA4FC6FC29ECBE6A0045BAD3 /* PhotoAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddPresenter.swift; sourceTree = "<group>"; };
+		FA4FC70329ECBF7E0045BAD3 /* PhotoShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareViewController.swift; sourceTree = "<group>"; };
+		FA4FC70529ECBFC90045BAD3 /* PhotoSharePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSharePresenter.swift; sourceTree = "<group>"; };
+		FA4FC70729ECC04B0045BAD3 /* PhotoShareRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareRouter.swift; sourceTree = "<group>"; };
 		FA55270629C651FE00093A84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		FA55270D29C6544600093A84 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		FA55270F29C661B500093A84 /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
@@ -326,6 +334,56 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FA4FC6FB29ECBE530045BAD3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA4FC6FC29ECBE6A0045BAD3 /* PhotoAddPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA4FC6FE29ECBF4F0045BAD3 /* PhotoShareScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA4FC70229ECBF6A0045BAD3 /* UseCase */,
+				FA4FC70129ECBF640045BAD3 /* Presenter */,
+				FA4FC70029ECBF5E0045BAD3 /* View */,
+				FA4FC6FF29ECBF590045BAD3 /* Router */,
+			);
+			path = PhotoShareScreen;
+			sourceTree = "<group>";
+		};
+		FA4FC6FF29ECBF590045BAD3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA4FC70729ECC04B0045BAD3 /* PhotoShareRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA4FC70029ECBF5E0045BAD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA4FC70329ECBF7E0045BAD3 /* PhotoShareViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA4FC70129ECBF640045BAD3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA4FC70529ECBFC90045BAD3 /* PhotoSharePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA4FC70229ECBF6A0045BAD3 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		FA55270229C650D800093A84 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +396,7 @@
 		FA55270329C6518300093A84 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA4FC6FE29ECBF4F0045BAD3 /* PhotoShareScreen */,
 				FAAA3CA129D0820E00565A3D /* PhotoAddScreen */,
 				FAAA3C9D29D081D200565A3D /* LikesScreen */,
 				FAAA3C9629D07FDA00565A3D /* SearchScreen */,
@@ -507,6 +566,7 @@
 		FAAA3CA129D0820E00565A3D /* PhotoAddScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FA4FC6FB29ECBE530045BAD3 /* Presenter */,
 				FAAA3CA329D0823900565A3D /* View */,
 				FAAA3CA229D0823400565A3D /* Router */,
 			);
@@ -781,6 +841,7 @@
 				FA55271429C6623B00093A84 /* UserProfileUseCase.swift in Sources */,
 				FAAA3C9C29D0808D00565A3D /* SearchScreenRouter.swift in Sources */,
 				FAAA3C9329D07E0300565A3D /* HomeRouter.swift in Sources */,
+				FA4FC70429ECBF7F0045BAD3 /* PhotoShareViewController.swift in Sources */,
 				FA3BFFCE29CCADED001C7D6C /* MainTabBarUseCase.swift in Sources */,
 				FA55271229C6622D00093A84 /* UserProfilePresenter.swift in Sources */,
 				FAAA3CA529D0824A00565A3D /* PhotoAddViewController.swift in Sources */,
@@ -807,6 +868,9 @@
 				FA34463A29B2997C000D03F2 /* RegisterRouter.swift in Sources */,
 				FA55271029C661B500093A84 /* UserProfileRouter.swift in Sources */,
 				FAAA3CA929D0826800565A3D /* LikesScreenViewController.swift in Sources */,
+				FA4FC6FD29ECBE6A0045BAD3 /* PhotoAddPresenter.swift in Sources */,
+				FA4FC70629ECBFC90045BAD3 /* PhotoSharePresenter.swift in Sources */,
+				FA4FC70829ECC04B0045BAD3 /* PhotoShareRouter.swift in Sources */,
 				FA60839429C90DC900E7743A /* MidLabelComponent.swift in Sources */,
 				FA3BFFCC29CCADE0001C7D6C /* MainTabBarPresenter.swift in Sources */,
 			);

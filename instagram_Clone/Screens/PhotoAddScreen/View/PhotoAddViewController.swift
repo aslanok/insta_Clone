@@ -18,6 +18,8 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
     private var photosArray : [UIImage] = [UIImage]()
     private var selectedPhoto : UIImage?
     
+    var presenter : PhotoAddPresentation?
+    
     private lazy var backButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -99,7 +101,6 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
                     if self.selectedPhoto == nil {
                         self.selectedPhoto = photo
                     }
-                    
                 }
                 if number == self.photosArray.count - 1{
                     self.collectionView.reloadData()
@@ -114,6 +115,7 @@ class PhotoAddViewController : UIViewController, PhotoAddViewContract, UICollect
     
     @objc func nextButtonTapped(){
         print("next tapped")
+        presenter?.openPhotoShareScreen(image: selectedPhoto)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
