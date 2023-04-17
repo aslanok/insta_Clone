@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PhotoShareRouting {
-    
+    func dismiss(from view : UIViewController)
 }
 
 class PhotoShareRouter : PhotoShareRouting{
@@ -23,19 +23,9 @@ class PhotoShareRouter : PhotoShareRouting{
         presenter.output = view
         return view
     }
-    /*
-    var viewController : UIViewController {
-        let view = PhotoShareViewController(image: <#T##UIImage?#>)
-        let presenter = PhotoSharePresenter(router: self, view: view)
-        
-        view.modalPresentationStyle = .fullScreen
-        
-        
-        view.presenter = presenter
-        presenter.output = view
-        return view
-    }
-     */
     
+    func dismiss(from view: UIViewController) {
+        view.dismiss(animated: true)
+    }
     
 }

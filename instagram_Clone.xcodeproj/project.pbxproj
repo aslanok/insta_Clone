@@ -28,6 +28,7 @@
 		FA3BFFCC29CCADE0001C7D6C /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */; };
 		FA3BFFCE29CCADED001C7D6C /* MainTabBarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */; };
 		FA427C0A29CCCF5700F96810 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA427C0929CCCF5700F96810 /* LogInPresenter.swift */; };
+		FA485EC029EDA77800606831 /* PhotoShareUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA485EBF29EDA77800606831 /* PhotoShareUseCase.swift */; };
 		FA4FC6FD29ECBE6A0045BAD3 /* PhotoAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC6FC29ECBE6A0045BAD3 /* PhotoAddPresenter.swift */; };
 		FA4FC70429ECBF7F0045BAD3 /* PhotoShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC70329ECBF7E0045BAD3 /* PhotoShareViewController.swift */; };
 		FA4FC70629ECBFC90045BAD3 /* PhotoSharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FC70529ECBFC90045BAD3 /* PhotoSharePresenter.swift */; };
@@ -102,6 +103,7 @@
 		FA3BFFCB29CCADE0001C7D6C /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
 		FA3BFFCD29CCADED001C7D6C /* MainTabBarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarUseCase.swift; sourceTree = "<group>"; };
 		FA427C0929CCCF5700F96810 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
+		FA485EBF29EDA77800606831 /* PhotoShareUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareUseCase.swift; sourceTree = "<group>"; };
 		FA4FC6FC29ECBE6A0045BAD3 /* PhotoAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddPresenter.swift; sourceTree = "<group>"; };
 		FA4FC70329ECBF7E0045BAD3 /* PhotoShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareViewController.swift; sourceTree = "<group>"; };
 		FA4FC70529ECBFC90045BAD3 /* PhotoSharePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSharePresenter.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		FA4FC70229ECBF6A0045BAD3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				FA485EBF29EDA77800606831 /* PhotoShareUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				FAAA3C9529D07E4F00565A3D /* HomeViewController.swift in Sources */,
 				FA55270729C651FE00093A84 /* MainTabBarViewController.swift in Sources */,
 				FAEB770429B38AA30007C86E /* RegisterPageUseCase.swift in Sources */,
+				FA485EC029EDA77800606831 /* PhotoShareUseCase.swift in Sources */,
 				FA3BFFC929CCADC3001C7D6C /* MainTabBarRouter.swift in Sources */,
 				FA34460029B290A6000D03F2 /* AppDelegate.swift in Sources */,
 				FA2CEFFA29CA59B400DBD20F /* UserProfilePostCell.swift in Sources */,

@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 protocol PhotoShareViewContract {
-    
+    func displaySavePhotoSuccess()
+    func displaySavePhotoFailed()
 }
 
 class PhotoShareViewController : UIViewController, PhotoShareViewContract{
     
     var presenter : PhotoSharePresentation?
     var image : UIImage?
+    let hud = JGProgressHUD(style: .light)
     
     private lazy var topCardView : UIView = {
         let view = UIView()
@@ -103,12 +106,24 @@ class PhotoShareViewController : UIViewController, PhotoShareViewContract{
     }
     
     @objc func backButtonTapped(){
-        print("back Tapped")
+        presenter?.dismiss()
     }
     
     @objc func nextButtonTapped(){
-        print("next tapped")
+        hud.textLabel.text = "Post is loading"
+        hud.show(in: self.view)
+        let photoName = UUID().uuidString
+        let photo = image?.jpegData(compressionQuality: 0.8) ?? Data()
+        presenter?.savePhoto(imageName: photoName, imageData: photo)
+        
     }
     
+    func displaySavePhotoSuccess() {
+        hud.dismiss(afterDelay: 2, animated: true)
+    }
+    
+    func displaySavePhotoFailed() {
+        
+    }
     
 }
